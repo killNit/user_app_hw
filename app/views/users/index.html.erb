@@ -1,6 +1,6 @@
 <h1>Users#index</h1>
-<% @users.each do |user| %>
+<% @user.each do |user| %>
     <h2><%= user.title %></h2>
-    <%= link_to "Show user", note_path(user)%>
+    <%= link_to "Show user", user_path(user)%>
     <%= link_to "Edit", edit_user_path(user)%>
 <% end %>

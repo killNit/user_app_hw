@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = Users.all
+    @user = User.all
   end
 
   def show
@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(first_name:)
+    @user = User.create(:first_name, :last_name, :hair_color, :eye_color)
+  end
 
   def edit
     @user = User.find(1)
@@ -26,6 +27,6 @@ class UsersController < ApplicationController
   private
 
   def users_params
-    params.require(:user).permit(:fisrt_name, :last_name, :hair_color, :eye_color, :gender, :alive)
+    params.require(:user).permit(:first_name, :last_name, :hair_color, :eye_color, :gender, :alive)
   end
 end
