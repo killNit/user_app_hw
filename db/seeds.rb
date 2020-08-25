@@ -8,4 +8,6 @@
 require 'faker'
 
 10.times do |i|
-    user = User.create(first_name: Faker::Name.name.first, last_name: Faker::Name.name.last, hair_color: Faker::Color.color_name, eye_color: Faker::Color.color_name, gender: Faker::Gender.type, alive: Faker::Boolean.boolean)
+    user = User.create(first_name: Faker::Name.name.first, last_name: Faker::Name.name, hair_color: Faker::Color.color_name, eye_color: Faker::Color.color_name, gender: Faker::Gender.type, alive: Faker::Boolean.boolean)
+end
+puts "seeded"
