@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(:first_name, :last_name, :hair_color, :eye_color)
+    @user = User.create(users_params)
   end
 
   def edit
@@ -21,6 +21,10 @@ class UsersController < ApplicationController
 
   def delete
     @user = User.destroy 
+  end
+
+  def update
+    @user = User.create 
   end
 
 
