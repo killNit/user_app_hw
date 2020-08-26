@@ -14,10 +14,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(users_params)
+    @user = User.new(users_params)
     if @user.save
       redirect_to users_path
-    else render new_user_path
+    else 
+      render new_user_path
     end
   end
 
@@ -25,13 +26,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def delete
-    @user = User.destroy 
+  def destroy
+    @user = User.find(params[:id]).destroy
     redirect_to users_path
   end
 
   def update
-    @user = User.create 
+    @user = User.find(params[:id])
+    if @user.update(users_params)
+      redirect_to users_path
+    else 
+      render :edit
+    end
+
   end
 
 
