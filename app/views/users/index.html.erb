@@ -1,4 +1,7 @@
-<h1>Users#index</h1>
+<h1>All Users</h1>
+<br />
+<br />
+<%= link_to "Create New User", new_user_path %>
 <% @user.each do |user| %>
     <h2><%= user.first_name %></h2>
     <%= link_to "Show user", user_path(user)%>

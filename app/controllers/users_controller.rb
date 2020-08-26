@@ -13,14 +13,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(users_params)
+    if @user.save
+      redirect_to users_path
+    else render new_user_path
+    end
   end
 
   def edit
-    @user = User.find(1)
+    @user = User.find(users_params)
   end
 
   def delete
     @user = User.destroy 
+    redirect_to users_path
   end
 
   def update
